@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organigrama </title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- MENÚ Y FORMULARIO -->
+    <div id="menu">
+        <h2>Organigrama</h2>
+        <form id="nodeForm">
+            <input type="text" id="nombre" placeholder="Ingresa Texto" required>
+
+            <label for="tipo">Tipo de Linea:</label>
+            <select id="tipo">
+                <option value="directo"> ———————————————</option>
+                <option value="asesoria"> - - - - - - - - - - - -  - - - - - - - - - - - -</option>
+            </select>
+
+            
+
+            <label for="color">Color :</label>
+            <input type="color" id="color" value="#ffffff">
+
+         
+            <label for="forma">Agregar forma :</label>
+            <select id="forma">
+                <option value="rect">Rectángulo</option>
+
+            </select>
+            <button type="submit" class="btn">
+                ➕ <span class="rectangle-shape"></span>
+            </button>
+            <button type="button" id="saveAsPDF" class="btn">📄 Guardar  PDF</button>
+            <button type="button" id="saveAsPNG" class="btn">🖼 Guardar  PNG</button>
+          
+        </form>
+    </div>
+
+    <!-- ÁREA DEL ORGANIGRAMA -->
+    <div id="canvas-container">
+        
+        <div class="centered-bold-margin">
+            <input type="text" id="parentId" placeholder="selección" readonly class="parent-input">
+            <label for="forma" class="add-node-label">Selecciona donde añadir el siguiente nodo</label>
+            
+        </div>
+        
+        <svg></svg>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/organigrama.js') }}"></script>
+
+</body>
+</html>

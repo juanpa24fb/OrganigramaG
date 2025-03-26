@@ -1,0 +1,233 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Menú y formulario */
+#menu {
+    width: 250px;
+    padding: 20px;
+    background-color: #9ffff7;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form select,
+form input[type="color"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form select:focus,
+form input[type="color"]:focus {
+    border-color: #87CEEB;
+    outline: none;
+    box-shadow: 0 0 5px rgba(135, 206, 235, 0.5);
+}
+
+form button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button.btn {
+    background-color: #fffafa;
+    color: white;
+}
+
+form button.btn:hover {
+    background-color: #464141;
+}
+
+/* Área del organigrama */
+#canvas-container {
+    margin-left: 320px; /* Espacio para el menú */
+    padding: 20px;
+    background-color: #ffffff;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(252, 252, 252, 0.1);
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(173, 154, 154, 0.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #menu {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #canvas-container {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+.link { 
+    fill: none; 
+    stroke: black; 
+    stroke-width: 2px; 
+}
+
+.dashed { 
+    stroke-dasharray: 5, 5; 
+}
+.link.arrow {
+    marker-end: url(#arrowhead); /* Aplica la flecha al final */
+}
+svg { 
+    width: 100%; 
+    height: 610px; 
+    border: 1px solid #2e2d2d; 
+}
+.node { 
+    cursor: move; 
+}
+#saveAsPDF, #saveAsPNG {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#saveAsPDF:hover, #saveAsPNG:hover {
+    background-color: #0056b3;
+}
+/* Estilo del botón */
+.btn-square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.btn-square:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-square:active {
+    background-color: #0056b3;
+    transform: scale(0.95);
+}
+
+/* Estilo del rectángulo dentro del botón */
+.rectangle-shape {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.input-field, .color-picker {
+    margin: 8px 0;
+    padding: 6px;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+}
+.modal-buttons button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Estilo para el input de color */
+input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Add your styles here */
+.centered-bold-margin {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 0px;
+    background-color: #9ffff7;
+}
+/* Add your styles here */
+
+.parent-input {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.add-node-label {
+    display: block;
+    margin-top: 10px;
+}
